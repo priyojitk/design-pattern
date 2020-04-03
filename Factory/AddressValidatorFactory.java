@@ -18,10 +18,10 @@ class US_Validator implements Validator {
 
 public class AddressValidatorFactory {
     private static AddressValidatorFactory instance;
-    static HashMap<String, Validator> CountryToValidator = new HashMap<>();
+    static HashMap<String, Validator> CountryToValidator;
 
     private AddressValidatorFactory() {
-
+        CountryToValidator = new HashMap<>();
         CountryToValidator.put("IN", new IN_Validator());
         CountryToValidator.put("US", new US_Validator());
     }
